@@ -1,0 +1,135 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--clr);
+}
+:root {
+    --clr: #465bac;
+}
+
+.navbar {
+    display: flex;
+    top: 50px;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60vh;
+    height: 10vh;
+    background-color: #fff;
+    border-radius: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0 20px;
+}
+
+.navbar ul li {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.navbar ul li a {
+    z-index: 2;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    color: var(--clr);
+}
+
+.navbar ul li a .icon {
+    display: block;
+    transition: 0.5s;
+    color: var(--clr);
+}
+
+.navbar ul li.active a .icon {
+    transform: translateY(-30px); 
+}
+
+.navbar ul li a p {
+    color: black;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.navbar ul li.active a p,
+.navbar ul li:hover a p {
+    opacity: 1; 
+}
+
+.here {
+    position: absolute;
+    border-radius: 50px;
+    top: -30px;
+    left: 50px;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    border: 6px solid var(--clr);;
+    transition: 0.5s;
+    background-color: aqua;
+}
+
+.here::before {
+    content: '';
+    position: absolute;
+    top: 24px;
+    left: -31px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    box-shadow: 1px -10px 0 0 var(--clr);
+    background-color: transparent;
+    border-top-right-radius: 20px;
+}
+
+.here::after {
+    content: '';
+    position: absolute;
+    top: 24px;
+    right: -40px;
+    width: 40px;
+    height: 30px;
+    display: flex;
+    box-shadow: -1px -10px 0 0 var(--clr);
+    background-color: transparent;
+    border-top-left-radius: 20px;
+}
+
+.navbar ul li:nth-child(1).active ~ .here {
+    transform: translateX(calc(136px * 0));
+}
+
+.navbar ul li:nth-child(2).active ~ .here {
+    transform: translateX(calc(135px * 1));
+}
+
+.navbar ul li:nth-child(3).active ~ .here {
+    transform: translateX(calc(134px * 2));
+}
+
+.navbar ul li:nth-child(4).active ~ .here {
+    transform: translateX(calc(133px * 3));
+}
+
+.titulo{
+    color: darkgray;
+    display: flex;
+    justify-content: center;
+}

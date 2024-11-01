@@ -1,0 +1,247 @@
+* {
+    @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+    font-family: "Merriweather", serif;
+    font-weight: 200;
+    font-style: normal;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root {
+    --clr: #070c24;
+}
+
+.navbar {
+    display: flex;
+    top: 0px;
+    position: fixed;
+    left: 2%;
+    transform: translateX(-50%);
+    width: 25vh;
+    height: 100vh;
+    background-color: rgb(199, 199, 164);
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+    list-style: none;
+}
+
+.navbar ul li {
+    margin: 100px 0;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.navbar ul li a {
+    z-index: 2;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    color: var(--clr);
+}
+
+.navbar ul li a .icon {
+    display: flex;
+    transition: 0.5s;
+    color: var(--clr);
+}
+
+.navbar ul li.active a .icon {
+    transform: translateX(117px); 
+}
+
+.navbar ul li a p {
+    position: absolute;
+    left: 10px;
+    width: 100px;
+    color: black;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.navbar ul li.active a p{
+    opacity: 1; 
+}
+
+.here {
+    position: absolute;
+    transform: rotate(90deg);
+    border-radius: 50px;
+    top: 110px;
+    left: 202px;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    border: 6px solid var(--clr);;
+    transition: 0.5s;
+    background-color: aqua;
+}
+
+
+
+.here::after {
+    content: '';
+    position: absolute;
+    transform: rotate(90deg);
+    top: -30px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    box-shadow: 1px -9px 0 0 var(--clr);
+    background-color: transparent;
+    border-top-right-radius: 20px;
+}
+
+.here::before {
+    content: '';
+    transform: rotate(90deg);
+    position: absolute;
+    top: 58px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    box-shadow: -1px -9px 0 0 var(--clr);
+    background-color: transparent;
+    border-top-left-radius: 20px;
+}
+
+.navbar ul li:nth-child(1).active ~ .here {
+    transform: translateY(calc(30vh * 0));
+}
+
+.navbar ul li:nth-child(2).active ~ .here {
+    transform: translateY(calc(23vh * 1));
+}
+
+.navbar ul li:nth-child(3).active ~ .here {
+    transform: translateY(calc(23vh * 2));
+}
+
+.navbar ul li:nth-child(4).active ~ .here {
+    transform: translateY(calc(23vh * 3));
+}
+
+
+.home , .about, .proyect, .contact h1{
+    font-size: 20px;
+    color: #fff;
+}
+.home , .about, .proyect, .contact p{
+    color: #fff;
+}
+.home , .about, .proyect, .contact, footer{
+    margin-left: 8%;
+    padding: 20px;
+    background-color: var(--clr);
+    color: #fff;
+}
+
+
+
+/* APARTADO CSS DE SECTION HOME */
+
+
+.home{
+    justify-content: center;
+    display: flex;
+    height: 100vh;
+}
+
+.home .container-home h1{
+    position: relative;
+    font-size: 70px;
+    color: aliceblue;
+}
+.home .container-home h2{
+    right: 40vh;
+    position: relative;
+    display: flex;
+    font-size: 40px;
+    color: aliceblue;
+}
+
+/*.hidden-info{
+    display: none;
+} */
+.container-front{
+    position: relative;
+    right: 40vh;
+}
+
+.container-front{
+    width: 40vh;
+    justify-content: center;
+    text-align: center;
+    border-radius: 50px;
+    background-color: aqua;
+}
+
+
+/* FIN APARTADO CSS DE SECTION HOME */
+
+
+
+
+/* APARTADO CSS DE SECTION PERFIL */
+.about{
+    display: flexbox;
+    height: 100vh;
+}
+
+.container-profile{
+    position: absolute;
+    left: 160vh;
+    display: block;
+    border-radius: 20px;
+    width: 40vh;
+    height: 60vh;
+    background-color: gray;
+}
+.perfil_img{
+    left: 10vh;
+    justify-content: center;
+    border-radius: 100px;
+    width: 200px;
+    height: 250px;
+    position: relative;
+}
+
+.biografia{
+    display: flex;
+    justify-content: center;
+}
+
+/* FIN APARTADO CSS DE SECTION PERFIL */
+
+/* APARTADO CSS DE SECTION PROYECTOS */
+
+.proyect{
+    height: 100vh;
+}
+
+/* FIN APARTADO CSS DE SECTION PROYECTOS */
+
+/* APARTADO CSS DE SECTION CONTACTO */
+
+.contact{
+    height: 100vh;
+}
+
+/* FIN APARTADO CSS DE SECTION CONTACTO */
+
+/* FOOTER CSS */
+
+footer{
+    background-color: var(--clr);
+    height: 10vh;
+}
