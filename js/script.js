@@ -7,3 +7,11 @@ function activeLink(){
 
 list.forEach((item)=>
     item.addEventListener('click', activeLink))
+
+const btnshow = document.getElementById("show-btn")
+const hidden_info = document.getElementById("hidden-info")
+
+
+btnshow.addEventListener("click", function(){
+    hidden_info.style.display = "block"
+});
